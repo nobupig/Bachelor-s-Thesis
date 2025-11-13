@@ -1,0 +1,79 @@
+% ========== 日本語卒論テンプレート ==========
+\documentclass[a4paper,12pt]{bxjsreport}
+
+% ----- 必要なパッケージ -----
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{here}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{geometry}
+
+% ----- 余白設定 -----
+\geometry{
+  left=25mm,
+  right=25mm,
+  top=25mm,
+  bottom=25mm
+}
+
+% ----- 行間 -----
+\setstretch{1.25}
+
+\begin{document}
+
+% ===========================
+% 表紙（Pandoc差し込み）
+% ===========================
+$cover$
+\clearpage
+
+% ===========================
+% 目次（LaTeXで自動生成）
+% ===========================
+\tableofcontents
+\clearpage
+
+% ===========================
+% 本文（各章）
+% ===========================
+
+\chapter{序論}
+$chap1$
+
+\chapter{掌面積および付着水量評価手法の確立}
+$chap2$
+
+\chapter{掌表面の付着水分量の測定と統計解析}
+$chap3$
+
+\chapter{ファージMS2付着・洗浄基礎実験}
+$chap4$
+
+\chapter{洗浄条件による除去効率比較}
+$chap5$
+
+\chapter{面積補正によるウイルス濃度標準化と減衰解析}
+$chap6$
+
+\chapter{洗浄後の残存ウイルス量に基づくリスク評価}
+$chap7$
+
+% ===========================
+% 付録
+% ===========================
+\appendix
+\chapter{付録}
+$appendix$
+
+% ===========================
+% 参考文献
+% ===========================
+\bibliographystyle{junsrt}
+\bibliography{bibliography}
+
+\end{document}
