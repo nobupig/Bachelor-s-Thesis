@@ -1,6 +1,17 @@
 % ========== 日本語卒論テンプレート ==========
 \documentclass[a4paper,12pt]{bxjsreport}
 
+% -------------------------------------
+% ★★ 日本語表示の必須設定（最重要） ★★
+% -------------------------------------
+\usepackage{luatexja}
+\usepackage{luatexja-fontspec}
+
+% 使う日本語フォントを指定（TexLive標準で必ず存在）
+\setmainjfont{IPAexMincho}      % 明朝体
+\setsansjfont{IPAexGothic}      % ゴシック
+\setmonojfont{IPAexGothic}
+
 % ----- 必要なパッケージ -----
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
@@ -12,6 +23,7 @@
 \usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{geometry}
+\usepackage[normalem]{ulem}  
 
 % ----- 余白設定 -----
 \geometry{
@@ -26,54 +38,87 @@
 
 \begin{document}
 
-% ===========================
-% 表紙（Pandoc差し込み）
-% ===========================
-$cover$
+%==============================
+%  表紙（固定デザイン）
+%==============================
+
+\begin{titlepage}
+\centering
+
+\vspace*{15mm}
+
+% 校章（任意：画像ファイルを thesis フォルダに置く場合）
+% \includegraphics[width=25mm]{school_logo.png}
+% \vspace{10mm}
+
+{\Large 令和 7 年度 \quad 卒業研究論文}\\[20mm]
+
+% タイトル（中央寄せ・2行）
+{\Large \textbf{手指に付着したウイルス量の測定と}}\\[3mm]
+{\Large \textbf{洗浄後の残存リスク評価に関する実験的研究}}\\[20mm]
+
+% 学生一覧
+{\large
+\begin{tabular}{r l}
+92100104 & 上田　涼介 \\
+92100124 & 岡本　悠椰 \\
+92100108 & 川瀬　羽駆 \\
+92005010 & 蔵岡　倫哉 \\
+92000130 & 押井　勇希 \\
+92100113 & 寺地　翔　 \\
+92005035 & 森山　大史 \\
+\end{tabular}
+}\\[20mm]
+
+% 所属
+{\large 近畿大学工業高等専門学校}\\[3mm]
+{\large 総合システム工学 都市環境コース（土木系）}\\[10mm]
+
+% 指導教員
+{\large 指導教員：安井宣仁 准教授}
+
+\vfill
+
+\end{titlepage}
+
 \clearpage
 
 % ===========================
-% 目次（LaTeXで自動生成）
+% 目次
 % ===========================
 \tableofcontents
 \clearpage
 
 % ===========================
-% 本文（各章）
+% 第1章のみ（暫定）
 % ===========================
-
 \chapter{序論}
-$chap1$
+\input{chapter1.tex}
+
+% ===========================
+% 以下の章はまだコメントでOK
+% ===========================
 
 \chapter{掌面積および付着水量評価手法の確立}
-$chap2$
+ \input{chapter2.tex}
 
-\chapter{掌表面の付着水分量の測定と統計解析}
-$chap3$
+% \chapter{掌表面の付着水分量の測定と統計解析}
+% \input{chap3.tex}
 
-\chapter{ファージMS2付着・洗浄基礎実験}
-$chap4$
+% \chapter{ファージMS2付着・洗浄基礎実験}
+% \input{chap4.tex}
 
-\chapter{洗浄条件による除去効率比較}
-$chap5$
+% \chapter{洗浄条件による除去効率比較}
+% \input{chap5.tex}
 
-\chapter{面積補正によるウイルス濃度標準化と減衰解析}
-$chap6$
+% \chapter{面積補正によるウイルス濃度標準化と減衰解析}
+% \input{chap6.tex}
 
-\chapter{洗浄後の残存ウイルス量に基づくリスク評価}
-$chap7$
+% \chapter{洗浄後の残存ウイルス量に基づくリスク評価}
+% \input{chap7.tex}
 
-% ===========================
-% 付録
-% ===========================
-\appendix
-\chapter{付録}
-$appendix$
-
-% ===========================
-% 参考文献
-% ===========================
-\bibliographystyle{junsrt}
-\bibliography{bibliography}
+% \appendix
+% \chapter{付録}
+% \input{appendix.tex}
 
 \end{document}
